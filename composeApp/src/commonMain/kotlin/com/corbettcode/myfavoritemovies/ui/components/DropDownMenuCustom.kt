@@ -17,7 +17,6 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -41,14 +40,14 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import pe.fernan.kmp.tmdb.ehPath1
+import com.corbettcode.myfavoritemovies.ehPath1
 import com.corbettcode.myfavoritemovies.ui.ext.dpToPx
 import com.corbettcode.myfavoritemovies.ui.ext.pxToDp
 
-@OptIn(
-    ExperimentalMaterial3Api::class, ExperimentalMaterial3WindowSizeClassApi::class,
-    ExperimentalFoundationApi::class
-)
+//@OptIn(
+//    ExperimentalMaterial3Api::class, ExperimentalMaterial3WindowSizeClassApi::class,
+//    ExperimentalFoundationApi::class
+//)
 @Composable
 fun DropDownMenuCustom(
     width: Dp = 250.dp,

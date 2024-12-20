@@ -285,11 +285,11 @@ fun MultiSelector(
 
 // Other
 fun ContentDrawScope.drawWithLayer(block: ContentDrawScope.() -> Unit) {
-    with(drawContext.canvas.nativeCanvas) {
-        val checkPoint = saveLayer(null, null)
-        block()
-        restoreToCount(checkPoint)
-    }
+//    with(drawContext.canvas.nativeCanvas) {
+//        val checkPoint = saveLayer(null, null)
+//        block()
+//        restoreToCount(checkPoint)
+//    }
 }
 
 @Composable

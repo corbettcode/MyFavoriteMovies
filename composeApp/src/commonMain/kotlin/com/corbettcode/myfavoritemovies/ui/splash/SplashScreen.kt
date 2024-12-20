@@ -26,6 +26,7 @@ import androidx.compose.ui.text.style.BaselineShift
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
+import com.corbettcode.myfavoritemovies.loadDrawableResource
 import com.corbettcode.myfavoritemovies.subTitleTextStyle
 import kotlinx.coroutines.delay
 import org.jetbrains.compose.resources.ExperimentalResourceApi

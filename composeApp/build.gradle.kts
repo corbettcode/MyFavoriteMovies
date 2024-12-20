@@ -77,6 +77,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(libs.kotlinx.datetime)
             implementation(libs.kotlinx.serialization.json)
+            implementation(libs.window.size)
 
             implementation(libs.ktor.core)
 //            implementation(libs.com.google.code.gson)

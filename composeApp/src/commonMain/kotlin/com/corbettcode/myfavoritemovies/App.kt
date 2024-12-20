@@ -1,12 +1,16 @@
 package com.corbettcode.myfavoritemovies
 
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 import com.corbettcode.myfavoritemovies.di.AppModule
 import com.corbettcode.myfavoritemovies.theme.AppTheme
 import com.corbettcode.myfavoritemovies.theme.LocalWindowSizeWidth
@@ -57,11 +61,24 @@ internal fun MyApplication() = AppTheme {
 //internal fun loadDrawableResource(drawable: String) = org.jetbrains.compose.resources.painterResource(
 //    "drawable/$drawable"
 //)
-//
-//val subTitleTextStyle: TextStyle
-//    @Composable get() = when (LocalWindowSizeWidth.current) {
-//        WindowSize.Expanded -> MaterialTheme.typography.headlineMedium
-//        WindowSize.Medium -> MaterialTheme.typography.titleMedium
-//        else -> // WindowWidthSizeClass.Compact
-//            MaterialTheme.typography.bodyMedium
-//    }
+
+@OptIn(
+    ExperimentalMaterial3Api::class,
+    ExperimentalMaterial3WindowSizeClassApi::class,
+    ExperimentalResourceApi::class
+)
+val paddingInternal: Dp
+    @Composable get() = when (LocalWindowSizeWidth.current) {
+        WindowSize.Expanded -> 40.dp
+        WindowSize.Medium -> 25.dp
+        else -> // WindowWidthSizeClass.Compact
+            15.dp
+    }
+
+val subTitleTextStyle: TextStyle
+    @Composable get() = when (LocalWindowSizeWidth.current) {
+        WindowSize.Expanded -> MaterialTheme.typography.headlineMedium
+        WindowSize.Medium -> MaterialTheme.typography.titleMedium
+        else -> // WindowWidthSizeClass.Compact
+            MaterialTheme.typography.bodyMedium
+    }

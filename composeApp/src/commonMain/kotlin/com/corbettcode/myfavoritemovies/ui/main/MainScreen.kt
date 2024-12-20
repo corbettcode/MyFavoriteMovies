@@ -61,6 +61,7 @@ import androidx.compose.ui.window.PopupProperties
 import com.corbettcode.myfavoritemovies.domain.model.MediaType
 import com.corbettcode.myfavoritemovies.domain.model.MovieListType
 import com.corbettcode.myfavoritemovies.domain.model.TVSeriesListType
+import com.corbettcode.myfavoritemovies.paddingInternal
 import com.corbettcode.myfavoritemovies.theme.LocalWindowSizeHeight
 import com.corbettcode.myfavoritemovies.theme.LocalWindowSizeWidth
 import com.corbettcode.myfavoritemovies.theme.WindowSize
@@ -69,10 +70,12 @@ import com.corbettcode.myfavoritemovies.ui.details.DetailScreen
 import com.corbettcode.myfavoritemovies.ui.details.DetailScreenClick
 import com.corbettcode.myfavoritemovies.ui.home.HomeScreen
 import com.corbettcode.myfavoritemovies.ui.home.HomeViewModel
+import com.corbettcode.myfavoritemovies.ui.items.ItemsScreen
 import com.corbettcode.myfavoritemovies.ui.navigation.KeyRoute
 import com.corbettcode.myfavoritemovies.ui.navigation.KeyRoutes
 import com.corbettcode.myfavoritemovies.ui.navigation.NavigateRoute
 import com.corbettcode.myfavoritemovies.ui.navigation.Screen
+import com.corbettcode.myfavoritemovies.ui.search.SearchScreen
 import com.corbettcode.myfavoritemovies.utils.TimeExt.now
 import io.github.aakira.napier.Napier
 import kotlinx.coroutines.launch

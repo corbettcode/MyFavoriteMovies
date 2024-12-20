@@ -46,6 +46,7 @@ import androidx.compose.ui.unit.dp
 import com.corbettcode.myfavoritemovies.domain.model.MediaType
 import com.corbettcode.myfavoritemovies.domain.model.Result
 import com.corbettcode.myfavoritemovies.domain.model.TimeWindows
+import com.corbettcode.myfavoritemovies.paddingInternal
 import com.corbettcode.myfavoritemovies.ui.components.CardPoster
 import com.corbettcode.myfavoritemovies.ui.components.CardPosterHorizontal
 import com.corbettcode.myfavoritemovies.ui.components.CustomTextField

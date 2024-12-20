@@ -42,7 +42,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.corbettcode.myfavoritemovies.domain.model.MediaType
+import com.corbettcode.myfavoritemovies.domain.model.Result
+import com.corbettcode.myfavoritemovies.paddingInternal
 import com.corbettcode.myfavoritemovies.theme.LocalWindowSizeWidth
+import com.corbettcode.myfavoritemovies.theme.WindowSize
 import com.corbettcode.myfavoritemovies.ui.common.VerticalScrollbarCommon
 import com.corbettcode.myfavoritemovies.ui.common.rememberScrollbarAdapterCommon
 import com.corbettcode.myfavoritemovies.ui.components.CardPoster2

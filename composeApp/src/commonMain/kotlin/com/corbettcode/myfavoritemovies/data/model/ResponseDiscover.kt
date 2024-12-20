@@ -1,5 +1,6 @@
 package com.corbettcode.myfavoritemovies.data.model
 
+import com.corbettcode.myfavoritemovies.domain.model.Result
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

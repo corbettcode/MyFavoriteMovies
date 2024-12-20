@@ -43,6 +43,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.corbettcode.myfavoritemovies.domain.model.Result
+import com.corbettcode.myfavoritemovies.paddingInternal
+import com.corbettcode.myfavoritemovies.ui.components.CardPoster
+import com.corbettcode.myfavoritemovies.ui.components.cardPosterWidth
+import com.corbettcode.myfavoritemovies.ui.grid.AdaptiveWithCountColumns
+import com.corbettcode.myfavoritemovies.ui.grid.FixedSizeWithCountColumns
+import com.corbettcode.myfavoritemovies.ui.home.HomeViewModel
+import com.corbettcode.myfavoritemovies.ui.navigation.NavigateRoute
+import pe.fernan.kmp.tmdb.ui.components.DropDownMenuCustom
 import kotlin.random.Random
 
 

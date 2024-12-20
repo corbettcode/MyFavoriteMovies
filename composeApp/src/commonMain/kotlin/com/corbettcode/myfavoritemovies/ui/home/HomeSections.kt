@@ -36,18 +36,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.seiko.imageloader.rememberImagePainter
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import pe.fernan.kmp.tmdb.loadDrawableResource
-import pe.fernan.kmp.tmdb.paddingInternal
-import pe.fernan.kmp.tmdb.subTitleTextStyle
+import com.corbettcode.myfavoritemovies.domain.model.Result
+import com.corbettcode.myfavoritemovies.loadDrawableResource
+import com.corbettcode.myfavoritemovies.paddingInternal
 import com.corbettcode.myfavoritemovies.theme.LocalWindowSizeWidth
 import com.corbettcode.myfavoritemovies.theme.WindowSize
-import pe.fernan.kmp.tmdb.ui.common.HorizontalScrollbarCommon
-import pe.fernan.kmp.tmdb.ui.common.defaultScrollbarStyleCommon
-import pe.fernan.kmp.tmdb.ui.common.rememberScrollbarAdapterCommon
 import com.corbettcode.myfavoritemovies.ui.components.AnimatedTab
-import pe.fernan.kmp.tmdb.ui.components.DropDownMenuCustom
 import com.corbettcode.myfavoritemovies.ui.ext.mouseClickHorizontalScroll
 import com.corbettcode.myfavoritemovies.ui.ext.pxToDp
+import pe.fernan.kmp.tmdb.ui.components.DropDownMenuCustom
 import kotlin.random.Random
 
 @OptIn(ExperimentalResourceApi::class)

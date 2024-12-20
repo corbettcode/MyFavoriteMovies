@@ -53,15 +53,15 @@ Fix home/HomeSections.kt:253:29 Unresolved reference: it
 //    onEvent: AwaitPointerEventScope.(event: PointerEvent) -> Unit
 //): Modifier
 //
-//
-//@Composable
-//internal expect fun VerticalScrollbarCommon(
-//    adapter: Any,
-//    modifier: Modifier = Modifier,
-//    reverseLayout: Boolean = false,
-//    style: Any? = null,
-//    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() }
-//)
+
+@Composable
+internal expect fun VerticalScrollbarCommon(
+    adapter: Any,
+    modifier: Modifier = Modifier,
+    reverseLayout: Boolean = false,
+    style: Any? = null,
+    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() }
+)
 
 
 
