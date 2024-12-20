@@ -43,26 +43,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
+import com.corbettcode.myfavoritemovies.domain.model.MediaType
+import com.corbettcode.myfavoritemovies.domain.model.Result
+import com.corbettcode.myfavoritemovies.domain.model.TimeWindows
+import com.corbettcode.myfavoritemovies.ui.components.CardPoster
+import com.corbettcode.myfavoritemovies.ui.components.CardPosterHorizontal
+import com.corbettcode.myfavoritemovies.ui.components.CustomTextField
+import com.corbettcode.myfavoritemovies.utils.Constant
 import com.seiko.imageloader.rememberImagePainter
 import io.github.aakira.napier.Napier
 import kotlinx.datetime.Clock
-import pe.fernan.kmp.tmdb.domain.model.MediaType
-import pe.fernan.kmp.tmdb.domain.model.TimeWindows
-import pe.fernan.kmp.tmdb.paddingInternal
-import pe.fernan.kmp.tmdb.subTitleTextStyle
-import pe.fernan.kmp.tmdb.titleTextStyle
-import pe.fernan.kmp.tmdb.ui.common.LocalCurrentSize
-import pe.fernan.kmp.tmdb.ui.common.VerticalScrollbarCommon
-import pe.fernan.kmp.tmdb.ui.common.rememberScrollbarAdapterCommon
-import pe.fernan.kmp.tmdb.ui.components.CardPoster
-import pe.fernan.kmp.tmdb.ui.components.CardPosterHorizontal
-import pe.fernan.kmp.tmdb.ui.components.CustomTextField
-import pe.fernan.kmp.tmdb.ui.main.itemMovie
-import pe.fernan.kmp.tmdb.ui.main.itemSeriesTV
-import pe.fernan.kmp.tmdb.utils.Constant
-
-
-
 
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3WindowSizeClassApi::class)

@@ -62,15 +62,23 @@ kotlin {
         }
         commonMain.dependencies {
             implementation(compose.runtime)
+            implementation(compose.material3)
             implementation(compose.foundation)
-            implementation(compose.material)
+//            implementation(compose.material)
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
+            implementation(libs.kotlinx.datetime)
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.napier)
+
+            api(compose.animation)
+            val precompose_version = "1.7.0-alpha03"
+
+            api("moe.tlaster:precompose:$precompose_version")
+            api("moe.tlaster:precompose-viewmodel:$precompose_version") // For ViewModel intergration
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)

@@ -20,11 +20,11 @@ import com.corbettcode.myfavoritemovies.data.model.ResponseSearchMovie
 import com.corbettcode.myfavoritemovies.data.model.ResponseSearchTvSeries
 import com.corbettcode.myfavoritemovies.data.model.ResponseTVSeriesList
 import com.corbettcode.myfavoritemovies.data.model.ResponseTrending
-import pe.fernan.kmp.tmdb.domain.model.ResultMovie
-import pe.fernan.kmp.tmdb.domain.model.ResultTvSeries
-import pe.fernan.kmp.tmdb.utils.Constant
-import pe.fernan.kmp.tmdb.utils.Constant.TIMEOUT
-import pe.fernan.kmp.tmdb.utils.toJson
+import com.corbettcode.myfavoritemovies.domain.model.ResultMovie
+import com.corbettcode.myfavoritemovies.domain.model.ResultTvSeries
+import com.corbettcode.myfavoritemovies.utils.Constant
+import com.corbettcode.myfavoritemovies.utils.Constant.TIMEOUT
+import com.corbettcode.myfavoritemovies.utils.toJson
 
 object TmdbClientApi {
     @OptIn(ExperimentalSerializationApi::class)

@@ -15,9 +15,10 @@ compose-multiplatform = "1.7.0"
 junit = "4.13.2"
 kotlin = "2.1.0"
 kotlinx-coroutines = "1.9.0"
-kotlinx-serialization = "1.6.2"
 kotlinx-datetime = "0.5.0"
-napier = "2.6.1"
+kotlinx-serialization = "1.6.2"
+napierVersion = "2.7.1"
+window-size = "0.3.1"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -33,8 +34,10 @@ androidx-activity-compose = { module = "androidx.activity:activity-compose", ver
 androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
 kotlinx-coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
-napier = { module = "io.github.aakira:napier", version.ref = "napier" }
+napier = { module = "io.github.aakira:napier", version.ref = "napierVersion" }
+window-size = { module = "dev.chrisbanes.material3:material3-window-size-class-multiplatform", version.ref = "window-size" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

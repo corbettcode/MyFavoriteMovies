@@ -6,11 +6,12 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import moe.tlaster.precompose.viewmodel.ViewModel
 import moe.tlaster.precompose.viewmodel.viewModelScope
-import pe.fernan.kmp.tmdb.domain.model.MediaType
-import pe.fernan.kmp.tmdb.domain.model.ResultMovie
-import pe.fernan.kmp.tmdb.domain.model.ResultTvSeries
-import pe.fernan.kmp.tmdb.domain.model.TimeWindows
-import pe.fernan.kmp.tmdb.domain.repository.TmdbRepository
+import com.corbettcode.myfavoritemovies.domain.model.MediaType
+import com.corbettcode.myfavoritemovies.domain.model.ResultMovie
+import com.corbettcode.myfavoritemovies.domain.model.Result
+import com.corbettcode.myfavoritemovies.domain.model.ResultTvSeries
+import com.corbettcode.myfavoritemovies.domain.model.TimeWindows
+import com.corbettcode.myfavoritemovies.domain.repository.TmdbRepository
 
 
 data class HomeState(

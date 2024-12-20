@@ -1,0 +1,178 @@
+package com.corbettcode.myfavoritemovies.ui.navigation
+
+
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.ui.graphics.vector.ImageVector
+import com.corbettcode.myfavoritemovies.utils.kase64.base64UrlDecoded
+import com.corbettcode.myfavoritemovies.utils.kase64.base64UrlEncoded
+import com.corbettcode.myfavoritemovies.utils.toJson
+import com.corbettcode.myfavoritemovies.utils.toModel
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import com.corbettcode.myfavoritemovies.domain.model.Result
+
+@Serializable
+data class NavigateRoute(
+    @SerialName("parentKey") val parentKey: KeyRoute,
+    @SerialName("routeKey") val routeKey: KeyRoute
+) {
+    override fun toString(): String {
+        return "NavigateRoute(parentKey=$parentKey, routeKey=$routeKey)"
+    }
+}
+
+@Serializable
+data class KeyRoute(
+    @SerialName("key") val key: String,
+    @SerialName("title") val title: String
+) {
+    override fun toString(): String {
+        return "KeyRoute(key='$key', title='$title')"
+    }
+}
+
+@Serializable
+data class KeyRoutes(
+    @SerialName("main") val main: KeyRoute,
+    @SerialName("routes") val routes: Set<KeyRoute>
+) {
+    override fun toString(): String {
+        return "KeyRoutes(main=$main, routes=$routes)"
+    }
+}
+
+sealed class Screen(
+    private val baseRoute: String,
+    val argKeys: List<String> = emptyList(),
+    val title: String = "",
+    val icon: ImageVector,
+) {
+    private val separator = "/"
+    private val stringFormat = "%s"
+
+    private val keysFormat = "{$stringFormat}"
+    //val keysFormat: (String) -> String = { "{$it}" }
+
+
+    val routeFormat: String
+        get() = if (argKeys.isEmpty()) throw Exception("The format does not exist since there are no ArgKeys") else {
+            val builder = argKeys.joinToString(
+                prefix = separator,
+                separator = separator
+            ) { stringFormat }
+            baseRoute + builder
+        }
+
+    val route: String
+        get() = if (argKeys.isEmpty()) baseRoute else {
+            val builder = argKeys.joinToString(
+                prefix = separator,
+                separator = separator
+            ) {
+                keysFormat.format(it)
+                // "%s"
+                //keysFormat(it)
+            }
+            baseRoute + builder
+        }
+
+    fun pass(vararg values: String) = routeFormat.format(*values)
+
+
+    inline fun <reified T> passObject(object1: T) = pass(
+        parser(object1)
+    )
+
+    inline fun <reified T> getObject(key: String, pathMap: Map<String, String>) =
+        generate<T>(pathMap[key]!!)
+
+
+    inline fun <reified T> parser(model: T): String =
+        model.toJson().base64UrlEncoded
+
+    inline fun <reified T> generate(text: String): T = text.base64UrlDecoded.toModel<T>()
+
+
+    data object Splash : Screen("splash", title = "Tmdb Kmp", icon = Icons.Default.Home)
+
+    data object Home : Screen("home", title = "", icon = Icons.Default.Home)
+    data object Items : Screen(
+        "items",
+        argKeys = listOf(ITEMS_NAVIGATE_ROUTE_ARGUMENT_KEY),
+        title = "",
+        icon = Icons.Default.Home
+    ) {
+
+        fun getObject(pathMap: Map<String, String>): NavigateRoute = getObject(ITEMS_NAVIGATE_ROUTE_ARGUMENT_KEY, pathMap)
+
+    }
+
+
+    data object Details : Screen(
+        "details",
+        argKeys = listOf(DETAILS_RESULT_ARGUMENT_KEY),
+        title = "",
+        icon = Icons.Default.Home
+    ) {
+        fun getObject(pathMap: Map<String, String>): Result = getObject(DETAILS_RESULT_ARGUMENT_KEY, pathMap)
+
+    }
+
+    data object Search : Screen(
+        "search",
+        argKeys = listOf(SEARCH_QUERY_ARGUMENT_KEY),
+        title = "",
+        icon = Icons.Default.Home
+    ) {
+        fun getQuery(pathMap: Map<String, String>): String = pathMap[SEARCH_QUERY_ARGUMENT_KEY]!!
+
+    }
+
+
+}
+
+private const val ITEMS_NAVIGATE_ROUTE_ARGUMENT_KEY = "ITEMS_NAVIGATE_ROUTE_ARGUMENT_KEY"
+private const val DETAILS_RESULT_ARGUMENT_KEY = "DETAILS_RESULT_ARGUMENT_KEY"
+private const val SEARCH_QUERY_ARGUMENT_KEY = "SEARCH_QUERY_ARGUMENT_KEY"
+
+
+fun main() {
+    val text = Screen.Details.route
+    println(text)
+}
+
+
+fun String.format(vararg args: Any): String {
+    val format = this
+    val stringBuilder = StringBuilder()
+
+    var currentIndex = 0
+    var i = 0
+    while (i < format.length) {
+        if (format[i] == '%') {
+            if (i + 1 < format.length) {
+                val marker = format[i + 1]
+
+                val value = args[currentIndex++]
+                val cadenaFormateada = when (marker) {
+                    's' -> value.toString()
+                    'd' -> value.toString().toInt()
+                    'f' -> value.toString().toDouble()
+                    else -> ""
+                }
+
+                stringBuilder.append(cadenaFormateada)
+                i += 2
+            } else {
+                stringBuilder.append('%')
+                i++
+            }
+        } else {
+            stringBuilder.append(format[i])
+            i++
+        }
+    }
+
+    return stringBuilder.toString()
+}

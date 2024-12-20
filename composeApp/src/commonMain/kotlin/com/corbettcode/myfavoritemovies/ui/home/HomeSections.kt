@@ -44,10 +44,10 @@ import com.corbettcode.myfavoritemovies.theme.WindowSize
 import pe.fernan.kmp.tmdb.ui.common.HorizontalScrollbarCommon
 import pe.fernan.kmp.tmdb.ui.common.defaultScrollbarStyleCommon
 import pe.fernan.kmp.tmdb.ui.common.rememberScrollbarAdapterCommon
-import pe.fernan.kmp.tmdb.ui.components.AnimatedTab
+import com.corbettcode.myfavoritemovies.ui.components.AnimatedTab
 import pe.fernan.kmp.tmdb.ui.components.DropDownMenuCustom
-import pe.fernan.kmp.tmdb.ui.ext.mouseClickHorizontalScroll
-import pe.fernan.kmp.tmdb.ui.ext.pxToDp
+import com.corbettcode.myfavoritemovies.ui.ext.mouseClickHorizontalScroll
+import com.corbettcode.myfavoritemovies.ui.ext.pxToDp
 import kotlin.random.Random
 
 @OptIn(ExperimentalResourceApi::class)

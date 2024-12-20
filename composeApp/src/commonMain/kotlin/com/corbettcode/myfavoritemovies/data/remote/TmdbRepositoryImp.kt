@@ -1,8 +1,8 @@
 package com.corbettcode.myfavoritemovies.data.remote
 
-import pe.fernan.kmp.tmdb.domain.model.MediaType
-import pe.fernan.kmp.tmdb.domain.model.ResultMovie
-import pe.fernan.kmp.tmdb.domain.model.ResultTvSeries
+import com.corbettcode.myfavoritemovies.domain.model.MediaType
+import com.corbettcode.myfavoritemovies.domain.model.ResultMovie
+import com.corbettcode.myfavoritemovies.domain.model.ResultTvSeries
 import pe.fernan.kmp.tmdb.domain.repository.TmdbRepository
 
 class TmdbRepositoryImp(private val api: TmdbClientApi) : TmdbRepository {

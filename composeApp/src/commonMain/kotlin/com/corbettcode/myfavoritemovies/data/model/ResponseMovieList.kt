@@ -3,8 +3,8 @@ package com.corbettcode.myfavoritemovies.data.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import pe.fernan.kmp.tmdb.domain.model.Dates
-import pe.fernan.kmp.tmdb.domain.model.Result
+import com.corbettcode.myfavoritemovies.domain.model.Dates
+import com.corbettcode.myfavoritemovies.domain.model.Result
 
 @Serializable
 class ResponseMovieList(
