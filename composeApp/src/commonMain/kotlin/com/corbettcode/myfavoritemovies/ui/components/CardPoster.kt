@@ -33,11 +33,10 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.seiko.imageloader.rememberImagePainter
-import pe.fernan.kmp.tmdb.paddingInternal
 import com.corbettcode.myfavoritemovies.ui.ext.dpToPx
 import com.corbettcode.myfavoritemovies.utils.Constant
-import pe.fernan.kmp.tmdb.utils.getDateFormat
-
+import com.corbettcode.myfavoritemovies.domain.model.Result
+import com.corbettcode.myfavoritemovies.utils.getDateFormat
 
 @OptIn(ExperimentalFoundationApi::class)
 

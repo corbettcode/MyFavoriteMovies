@@ -26,8 +26,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.seiko.imageloader.rememberImagePainter
-import pe.fernan.kmp.tmdb.ui.common.onPointerEventCommon
 import com.corbettcode.myfavoritemovies.utils.Constant
+import com.corbettcode.myfavoritemovies.domain.model.Result
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalComposeUiApi::class)
 @Composable

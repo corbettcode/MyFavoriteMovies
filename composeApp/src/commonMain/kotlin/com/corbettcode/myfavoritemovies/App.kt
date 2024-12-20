@@ -16,8 +16,8 @@ import com.corbettcode.myfavoritemovies.ui.splash.SplashScreen
 import io.github.aakira.napier.DebugAntilog
 import io.github.aakira.napier.Napier
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.resources.Resource
 import org.jetbrains.compose.ui.tooling.preview.Preview
+//import org.jetbrains.compose.resources.resource
 
 @Composable
 @Preview
@@ -45,29 +45,23 @@ internal fun MyApplication() = AppTheme {
 
 
 }
-
-/**
- * Get a resource from <sourceSet>/resources (for example, from commonMain/resources).
- */
-@ExperimentalResourceApi
-expect fun resource(path: String): Resource
-
-@OptIn(ExperimentalResourceApi::class)
-internal suspend fun loadResource(resourcePath: String): ByteArray {
-    return resource(resourcePath).readBytes()
-}
-
-internal suspend fun loadFontResource(font: String) = loadResource("font/$font")
-@OptIn(ExperimentalResourceApi::class)
-@Composable
-internal fun loadDrawableResource(drawable: String) = org.jetbrains.compose.resources.painterResource(
-    "drawable/$drawable"
-)
-
-val subTitleTextStyle: TextStyle
-    @Composable get() = when (LocalWindowSizeWidth.current) {
-        WindowSize.Expanded -> MaterialTheme.typography.headlineMedium
-        WindowSize.Medium -> MaterialTheme.typography.titleMedium
-        else -> // WindowWidthSizeClass.Compact
-            MaterialTheme.typography.bodyMedium
-    }
+//
+//@OptIn(ExperimentalResourceApi::class)
+//internal suspend fun loadResource(resourcePath: String): ByteArray {
+//    return resource(resourcePath).readBytes()
+//}
+//
+//internal suspend fun loadFontResource(font: String) = loadResource("font/$font")
+//@OptIn(ExperimentalResourceApi::class)
+//@Composable
+//internal fun loadDrawableResource(drawable: String) = org.jetbrains.compose.resources.painterResource(
+//    "drawable/$drawable"
+//)
+//
+//val subTitleTextStyle: TextStyle
+//    @Composable get() = when (LocalWindowSizeWidth.current) {
+//        WindowSize.Expanded -> MaterialTheme.typography.headlineMedium
+//        WindowSize.Medium -> MaterialTheme.typography.titleMedium
+//        else -> // WindowWidthSizeClass.Compact
+//            MaterialTheme.typography.bodyMedium
+//    }

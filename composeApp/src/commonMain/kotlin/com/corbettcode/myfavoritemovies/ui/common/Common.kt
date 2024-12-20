@@ -18,11 +18,11 @@ data class CurrentWindowsSize(val height: Dp, val width: Dp)
 enum class PlatformTarget {
     Android, Jvm, Web
 }
-
-internal expect val CurrentPlatformTarget: PlatformTarget
-
-@Composable
-internal expect fun LocalCurrentSize(): CurrentWindowsSize
+//
+//internal expect val CurrentPlatformTarget: PlatformTarget
+//
+//@Composable
+//internal expect fun LocalCurrentSize(): CurrentWindowsSize
 
 /*
 Fix components/CardHorizontalPoster.kt:24:42 Unresolved reference: onPointerEvent
@@ -43,57 +43,57 @@ Fix home/HomeSections.kt:253:29 Unresolved reference: it
  */
 
 
-
-@OptIn(ExperimentalComposeUiApi::class)
-
-@Composable
-internal expect fun Modifier.onPointerEventCommon(
-    eventType: PointerEventType,
-    pass: PointerEventPass = PointerEventPass.Main,
-    onEvent: AwaitPointerEventScope.(event: PointerEvent) -> Unit
-): Modifier
-
-
-@Composable
-internal expect fun VerticalScrollbarCommon(
-    adapter: Any,
-    modifier: Modifier = Modifier,
-    reverseLayout: Boolean = false,
-    style: Any? = null,
-    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() }
-)
-
-
+//
+//@OptIn(ExperimentalComposeUiApi::class)
+//
+//@Composable
+//internal expect fun Modifier.onPointerEventCommon(
+//    eventType: PointerEventType,
+//    pass: PointerEventPass = PointerEventPass.Main,
+//    onEvent: AwaitPointerEventScope.(event: PointerEvent) -> Unit
+//): Modifier
+//
+//
+//@Composable
+//internal expect fun VerticalScrollbarCommon(
+//    adapter: Any,
+//    modifier: Modifier = Modifier,
+//    reverseLayout: Boolean = false,
+//    style: Any? = null,
+//    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() }
+//)
 
 
 
 
-@Composable
-internal expect fun rememberScrollbarAdapterCommon(
-    scrollState: LazyListState,
-): Any
 
-@Composable
-internal expect fun rememberScrollbarAdapterCommon(
-    scrollState: LazyGridState,
-): Any
-
-
-
-
-@Composable
-internal expect fun HorizontalScrollbarCommon(
-    adapter: Any,
-    modifier: Modifier = Modifier,
-    reverseLayout: Boolean = false,
-    style: Any = Any(),
-    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() }
-)
+//
+//@Composable
+//internal expect fun rememberScrollbarAdapterCommon(
+//    scrollState: LazyListState,
+//): Any
+//
+//@Composable
+//internal expect fun rememberScrollbarAdapterCommon(
+//    scrollState: LazyGridState,
+//): Any
 
 
 
-
-internal expect fun defaultScrollbarStyleCommon(background: String?): Any
+//
+//@Composable
+//internal expect fun HorizontalScrollbarCommon(
+//    adapter: Any,
+//    modifier: Modifier = Modifier,
+//    reverseLayout: Boolean = false,
+//    style: Any = Any(),
+//    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() }
+//)
+//
+//
+//
+//
+//internal expect fun defaultScrollbarStyleCommon(background: String?): Any
 
 
 // https://proandroiddev.com/custom-font-magic-in-compose-multiplatform-unlock-your-creativity-dcd0c9fa7756

@@ -62,20 +62,32 @@ kotlin {
         }
         commonMain.dependencies {
             implementation(compose.runtime)
+
             implementation(compose.material3)
+            implementation(compose.materialIconsExtended)
+            @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
+            implementation(compose.components.resources)
+
             implementation(compose.foundation)
 //            implementation(compose.material)
             implementation(compose.ui)
-            implementation(compose.components.resources)
+            implementation(libs.composeImageLoader)
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(libs.kotlinx.datetime)
             implementation(libs.kotlinx.serialization.json)
+
+            implementation(libs.ktor.core)
+//            implementation(libs.com.google.code.gson)
+            implementation(libs.ktor.client.logging)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.io.ktor.ktor.client.serialization)
+
             implementation(libs.napier)
 
             api(compose.animation)
-            val precompose_version = "1.7.0-alpha03"
+            val precompose_version = "1.7.0-alpha01"
 
             api("moe.tlaster:precompose:$precompose_version")
             api("moe.tlaster:precompose-viewmodel:$precompose_version") // For ViewModel intergration
