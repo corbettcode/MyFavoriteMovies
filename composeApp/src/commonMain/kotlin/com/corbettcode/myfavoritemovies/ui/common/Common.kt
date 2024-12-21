@@ -1,16 +1,5 @@
 package com.corbettcode.myfavoritemovies.ui.common
 
-import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.lazy.LazyListState
-import androidx.compose.foundation.lazy.grid.LazyGridState
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
-import androidx.compose.ui.ExperimentalComposeUiApi
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.input.pointer.AwaitPointerEventScope
-import androidx.compose.ui.input.pointer.PointerEvent
-import androidx.compose.ui.input.pointer.PointerEventPass
-import androidx.compose.ui.input.pointer.PointerEventType
 import androidx.compose.ui.unit.Dp
 
 data class CurrentWindowsSize(val height: Dp, val width: Dp)
@@ -18,7 +7,7 @@ data class CurrentWindowsSize(val height: Dp, val width: Dp)
 enum class PlatformTarget {
     Android, Jvm, Web
 }
-//
+
 //internal expect val CurrentPlatformTarget: PlatformTarget
 //
 //@Composable
@@ -53,15 +42,15 @@ Fix home/HomeSections.kt:253:29 Unresolved reference: it
 //    onEvent: AwaitPointerEventScope.(event: PointerEvent) -> Unit
 //): Modifier
 //
-
-@Composable
-internal expect fun VerticalScrollbarCommon(
-    adapter: Any,
-    modifier: Modifier = Modifier,
-    reverseLayout: Boolean = false,
-    style: Any? = null,
-    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() }
-)
+//
+//@Composable
+//internal expect fun VerticalScrollbarCommon(
+//    adapter: Any,
+//    modifier: Modifier = Modifier,
+//    reverseLayout: Boolean = false,
+//    style: Any? = null,
+//    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() }
+//)
 
 
 
@@ -77,9 +66,9 @@ internal expect fun VerticalScrollbarCommon(
 //internal expect fun rememberScrollbarAdapterCommon(
 //    scrollState: LazyGridState,
 //): Any
-
-
-
+//
+//
+//
 //
 //@Composable
 //internal expect fun HorizontalScrollbarCommon(
@@ -89,10 +78,10 @@ internal expect fun VerticalScrollbarCommon(
 //    style: Any = Any(),
 //    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() }
 //)
-//
-//
-//
-//
+
+
+
+
 //internal expect fun defaultScrollbarStyleCommon(background: String?): Any
 
 

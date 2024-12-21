@@ -8,6 +8,6 @@ fun main() = application {
         onCloseRequest = ::exitApplication,
         title = "MyFavoriteMovies",
     ) {
-        App()
+        App(isLargeScreen = true)
     }
 }

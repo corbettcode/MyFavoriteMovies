@@ -4,13 +4,13 @@ package com.corbettcode.myfavoritemovies.ui.navigation
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.ui.graphics.vector.ImageVector
-import com.corbettcode.myfavoritemovies.utils.kase64.base64UrlDecoded
-import com.corbettcode.myfavoritemovies.utils.kase64.base64UrlEncoded
-import com.corbettcode.myfavoritemovies.utils.toJson
-import com.corbettcode.myfavoritemovies.utils.toModel
+import com.corbettcode.myfavoritemovies.domain.model.Result
+import com.corbettcode.myfavoritemovies.utility.kase64.base64UrlDecoded
+import com.corbettcode.myfavoritemovies.utility.kase64.base64UrlEncoded
+import com.corbettcode.myfavoritemovies.utility.toJson
+import com.corbettcode.myfavoritemovies.utility.toModel
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import com.corbettcode.myfavoritemovies.domain.model.Result
 
 @Serializable
 data class NavigateRoute(

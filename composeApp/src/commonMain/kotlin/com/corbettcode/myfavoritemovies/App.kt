@@ -1,84 +1,40 @@
 package com.corbettcode.myfavoritemovies
 
-import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
-import com.corbettcode.myfavoritemovies.di.AppModule
-import com.corbettcode.myfavoritemovies.theme.AppTheme
-import com.corbettcode.myfavoritemovies.theme.LocalWindowSizeWidth
-import com.corbettcode.myfavoritemovies.theme.WindowSize
-import com.corbettcode.myfavoritemovies.ui.main.MainScreen
-import com.corbettcode.myfavoritemovies.ui.splash.SplashScreen
-import io.github.aakira.napier.DebugAntilog
-import io.github.aakira.napier.Napier
-import org.jetbrains.compose.resources.ExperimentalResourceApi
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import myfavoritemovies.composeapp.generated.resources.Res
+import myfavoritemovies.composeapp.generated.resources.compose_multiplatform
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
-//import org.jetbrains.compose.resources.resource
 
 @Composable
 @Preview
-fun App() {
-    MyApplication()
-}
-
-@Composable
-internal fun MyApplication() = AppTheme {
-    Napier.base(DebugAntilog())
-    val viewModel by lazy {
-        AppModule.homeViewModel
-    }
-
-    var splash: Boolean by remember { mutableStateOf(true) }
-    if (splash) {
-        SplashScreen {
-            if (splash) {
-                splash = false
+fun App(isLargeScreen: Boolean = false) {
+    MaterialTheme {
+        var showContent by remember { mutableStateOf(false) }
+        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+            Button(onClick = { showContent = !showContent }) {
+                Text("Click me!")
+            }
+            AnimatedVisibility(showContent) {
+                val greeting = remember { Greeting().greet() }
+                Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+                    Image(painterResource(Res.drawable.compose_multiplatform), null)
+                    Text("Compose: $greeting")
+                }
             }
         }
-    } else {
-        MainScreen(viewModel)
     }
-
-
 }
-//
-//@OptIn(ExperimentalResourceApi::class)
-//internal suspend fun loadResource(resourcePath: String): ByteArray {
-//    return resource(resourcePath).readBytes()
-//}
-//
-//internal suspend fun loadFontResource(font: String) = loadResource("font/$font")
-//@OptIn(ExperimentalResourceApi::class)
-//@Composable
-//internal fun loadDrawableResource(drawable: String) = org.jetbrains.compose.resources.painterResource(
-//    "drawable/$drawable"
-//)
-
-@OptIn(
-    ExperimentalMaterial3Api::class,
-    ExperimentalMaterial3WindowSizeClassApi::class,
-    ExperimentalResourceApi::class
-)
-val paddingInternal: Dp
-    @Composable get() = when (LocalWindowSizeWidth.current) {
-        WindowSize.Expanded -> 40.dp
-        WindowSize.Medium -> 25.dp
-        else -> // WindowWidthSizeClass.Compact
-            15.dp
-    }
-
-val subTitleTextStyle: TextStyle
-    @Composable get() = when (LocalWindowSizeWidth.current) {
-        WindowSize.Expanded -> MaterialTheme.typography.headlineMedium
-        WindowSize.Medium -> MaterialTheme.typography.titleMedium
-        else -> // WindowWidthSizeClass.Compact
-            MaterialTheme.typography.bodyMedium
-    }

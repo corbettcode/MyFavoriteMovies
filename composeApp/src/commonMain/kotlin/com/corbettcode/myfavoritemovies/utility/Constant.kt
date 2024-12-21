@@ -1,4 +1,4 @@
-package com.corbettcode.myfavoritemovies.utils
+package com.corbettcode.myfavoritemovies.utility
 
 import com.corbettcode.myfavoritemovies.ui.navigation.format
 

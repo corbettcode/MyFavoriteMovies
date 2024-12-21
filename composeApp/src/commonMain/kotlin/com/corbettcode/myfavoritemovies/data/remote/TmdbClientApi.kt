@@ -1,5 +1,16 @@
 package com.corbettcode.myfavoritemovies.data.remote
 
+import com.corbettcode.myfavoritemovies.data.model.ResponseList
+import com.corbettcode.myfavoritemovies.data.model.ResponseMovieList
+import com.corbettcode.myfavoritemovies.data.model.ResponseSearchMovie
+import com.corbettcode.myfavoritemovies.data.model.ResponseSearchTvSeries
+import com.corbettcode.myfavoritemovies.data.model.ResponseTVSeriesList
+import com.corbettcode.myfavoritemovies.data.model.ResponseTrending
+import com.corbettcode.myfavoritemovies.domain.model.ResultMovie
+import com.corbettcode.myfavoritemovies.domain.model.ResultTvSeries
+import com.corbettcode.myfavoritemovies.utility.Constant
+import com.corbettcode.myfavoritemovies.utility.Constant.TIMEOUT
+import com.corbettcode.myfavoritemovies.utility.toJson
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.plugins.HttpTimeout
@@ -9,32 +20,21 @@ import io.ktor.client.plugins.logging.Logger
 import io.ktor.client.plugins.logging.Logging
 import io.ktor.client.plugins.logging.SIMPLE
 import io.ktor.client.request.get
-import io.ktor.serialization.kotlinx.json.json
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.serialization.ExperimentalSerializationApi
-import kotlinx.serialization.json.Json
-import com.corbettcode.myfavoritemovies.data.model.ResponseList
-import com.corbettcode.myfavoritemovies.data.model.ResponseMovieList
-import com.corbettcode.myfavoritemovies.data.model.ResponseSearchMovie
-import com.corbettcode.myfavoritemovies.data.model.ResponseSearchTvSeries
-import com.corbettcode.myfavoritemovies.data.model.ResponseTVSeriesList
-import com.corbettcode.myfavoritemovies.data.model.ResponseTrending
-import com.corbettcode.myfavoritemovies.domain.model.ResultMovie
-import com.corbettcode.myfavoritemovies.domain.model.ResultTvSeries
-import com.corbettcode.myfavoritemovies.utils.Constant
-import com.corbettcode.myfavoritemovies.utils.Constant.TIMEOUT
-import com.corbettcode.myfavoritemovies.utils.toJson
+
+// import io.ktor.serialization.kotlinx.json.json
 
 object TmdbClientApi {
     @OptIn(ExperimentalSerializationApi::class)
     private val client = HttpClient {
         install(ContentNegotiation) {
-            json(Json {
-                isLenient = true
-                explicitNulls = false
-                ignoreUnknownKeys = true
-            })
+//            json(Json {
+//                isLenient = true
+//                explicitNulls = false
+//                ignoreUnknownKeys = true
+//            })
         }
 
         install(Logging) {

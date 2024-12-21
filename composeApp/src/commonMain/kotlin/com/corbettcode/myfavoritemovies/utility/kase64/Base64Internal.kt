@@ -1,4 +1,4 @@
-package com.corbettcode.myfavoritemovies.utils.kase64
+package com.corbettcode.myfavoritemovies.utility.kase64
 
 /* https://github.com/saschpe/Kase64
  * Copyright 2022 Sascha Peilicke <sascha@peilicke.de>

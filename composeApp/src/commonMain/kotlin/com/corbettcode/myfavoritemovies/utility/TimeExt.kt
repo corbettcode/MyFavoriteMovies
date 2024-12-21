@@ -1,4 +1,4 @@
-package com.corbettcode.myfavoritemovies.utils
+package com.corbettcode.myfavoritemovies.utility
 
 import kotlinx.datetime.Clock
 import kotlinx.datetime.DateTimeUnit
@@ -10,7 +10,7 @@ import kotlinx.datetime.minus
 import kotlinx.datetime.plus
 import kotlinx.datetime.toInstant
 import kotlinx.datetime.toLocalDateTime
-import com.corbettcode.myfavoritemovies.utils.TimeExt.now
+import com.corbettcode.myfavoritemovies.utility.TimeExt.now
 
 /**
  * @param dateString -> format is "2023-12-15"
