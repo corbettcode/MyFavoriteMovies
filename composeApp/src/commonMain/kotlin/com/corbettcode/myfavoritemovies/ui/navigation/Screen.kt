@@ -4,7 +4,6 @@ package com.corbettcode.myfavoritemovies.ui.navigation
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.ui.graphics.vector.ImageVector
-import com.corbettcode.myfavoritemovies.domain.model.Result
 import com.corbettcode.myfavoritemovies.utility.kase64.base64UrlDecoded
 import com.corbettcode.myfavoritemovies.utility.kase64.base64UrlEncoded
 import com.corbettcode.myfavoritemovies.utility.toJson
@@ -115,7 +114,7 @@ sealed class Screen(
         title = "",
         icon = Icons.Default.Home
     ) {
-        fun getObject(pathMap: Map<String, String>): Result = getObject(DETAILS_RESULT_ARGUMENT_KEY, pathMap)
+ //       fun getObject(pathMap: Map<String, String>): Result = getObject(DETAILS_RESULT_ARGUMENT_KEY, pathMap)
 
     }
 
